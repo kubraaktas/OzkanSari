@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+      xmlns:t="http://myfaces.apache.org/tomahawk"
+      template="layout2/templateInner.xhtml"  >
+
+	<ui:define name="head">
+	
+		<style>
+		
+			.ui-accordion .ui-accordion-content {
+				padding:1em 1.2em;
+			}
+		</style>
+
+	</ui:define>
+
+	<ui:define name="body">
+
+		<p:accordionPanel id="myResumeTabView" autoHeight="true">  
+		
+			<p:tab title="Summary">
+			
+				<h:panelGrid columns="2" styleClass="plainTable" style="width: 100%;" >
+					<h:panelGrid columns="2">
+						<h:outputText value="Name" />
+						<h:outputText value="OZKAN SARI" />
+						
+						<h:outputText value="Current Title" />
+						<h:outputText value="Software Specialist" />
+						
+						<h:outputText value="Academic Degree" />
+						<h:outputText value="Computer Engineer, BSc, 2007" />
+						
+						<h:outputText value="Birth" />
+						<h:outputText value="Kutahya, 1984" />
+						
+						<h:outputText value="Address" />
+						<h:outputText value="Şişli, Istanbul" />
+					</h:panelGrid>
+					
+					<h:panelGroup>
+						<h:graphicImage value="#{request.contextPath}/layout2/style/common/images/me/ozkansari_cv.jpg" styleClass="profileImage"/>
+					</h:panelGroup>
+				</h:panelGrid>
+				
+			</p:tab>
+			
+			<p:tab title="Experience">
+			
+				<t:panelGrid columns="2" styleClass="plainTable" style="width: 100%;">
+				
+					<t:panelGroup colspan="2"> Professional Experience </t:panelGroup>
+					
+					<t:panelGroup> 06/2009 – (..........) </t:panelGroup>
+					<t:panelGroup> Software Specialist, Provus Istanbul</t:panelGroup>
+					
+					<t:panelGroup> 11/2008 – 06/2009 </t:panelGroup>
+					<t:panelGroup> Temporary Military Member (Obligatory) at Turkish Armed Forces </t:panelGroup>
+					
+					<t:panelGroup> 06/2007 – 11/2008 </t:panelGroup>
+					<t:panelGroup> Software Engineer, Overteam Technologies </t:panelGroup>
+					
+				</t:panelGrid>
+			</p:tab>
+			
+			<p:tab title="Education">
+				<t:panelGrid columns="2" styleClass="plainTable" style="width: 100%;">
+				
+					<t:panelGroup colspan="2"> Yeditepe University, Computer Engineering, 2002 –2007, GPA : 3.44 </t:panelGroup>
+					
+					<t:panelGroup colspan="2"> Middlesex University, London, Erasmus Exchange Student, January-June 2006 </t:panelGroup>
+					
+					<t:panelGroup colspan="2"> Kütahya High School, Science, 1998 - 2001 </t:panelGroup>
+					
+				</t:panelGrid>
+			</p:tab>
+			
+			<p:tab title="Skills">
+			
+			</p:tab>
+			
+			<p:tab title="Activites">
+			
+			</p:tab>
+			
+			<p:tab title="References">
+			
+			</p:tab>
+			
+			<p:tab title="More ..">
+			
+			</p:tab>
+
+		</p:accordionPanel>
+			
+	</ui:define>
+	
+</ui:composition>

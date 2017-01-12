@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+      xmlns:t="http://myfaces.apache.org/tomahawk"
+      template="layout2/template.xhtml"  >
+
+	<ui:define name="head">
+
+		
+	</ui:define>
+
+	<ui:define name="body">
+
+		<p class="header2">ABOUT ME</p>
+		
+		<p class="header3">
+			<img class="imgBullet" src="#{request.contextPath}/layout2/style/common/images/bullet.gif" alt="." />
+			MY EDUCATION
+		</p>
+		<ul>
+			<li>Computer Engineering Graduate. </li>
+			<li>Earned full scholarship for B.Sc. studies during 5 years</li>
+			<li>Graduated by entering honorary list of the university.</li>
+			<li>6 Months in London Middlesex University as an Erasmus student</li>
+		</ul>
+		<br/>
+		
+		<p class="header3">
+			<img class="imgBullet" src="#{request.contextPath}/layout2/style/common/images/bullet.gif" alt="." />
+			MY SKILLS
+		</p>
+		<ul>
+			<li>Java Developer</li>
+			<li>Skilled in web programming (JSF,XHTML,Javascript and Ajax) </li>
+			<li>Also has Oracle,Crystal Reports,PL/SQL,C knowledge</li>
+		</ul>
+		<br/>
+		
+		<p class="header3">
+			<img class="imgBullet" src="#{request.contextPath}/layout2/style/common/images/bullet.gif" alt="." />
+			MY CAREER
+		</p>
+		<ul>
+			<li>Professional since 2007</li>
+			<li>Works as a Software Specialist for <a href="http://www.provus.com.tr/index.en.html" target="_blank">Provus Istanbul</a> </li>
+			<li><a href="#{request.contextPath}/page/resume.xhtml">My Resume</a></li>
+			<li><a href="http://www.linkedin.com/in/ozkansari" target="_blank">My LinkedIn Profile</a></li>
+		</ul>
+		<br/>
+		
+		<p class="header3">
+			<img class="imgBullet" src="#{request.contextPath}/layout2/style/common/images/bullet.gif" alt="." />
+			MY HOBBIES
+		</p>
+		<ul>
+			<li><a href="http://bilgisayardunyam.blogspot.com" target="_blank">My Blog</a></li>
+			<li><a href="http://picasaweb.google.com/ozkansari" target="_blank">My Photos</a></li>
+		</ul>
+		
+		<br/><br/><br/>
+		<t:div styleClass="bigNotice">
+			This website is under construction
+			<br/><br/>
+			<a href="http://sites.google.com/a/ozkansari.net/ozkan-sari-my-personal-page/" target="_blank"> You can check my old web page here </a>
+		</t:div>
+
+		<t:div style="position:absolute;top:0;right:0"> </t:div>
+		
+	</ui:define>
+	
+</ui:composition>

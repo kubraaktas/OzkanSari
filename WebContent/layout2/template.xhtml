@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="ISO-8859-9"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:t="http://myfaces.apache.org/tomahawk" contentType="text/html"
+	charset="UTF-8">
+
+	<html>
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		
+		<link rel="shortcut icon" href="#{request.contextPath}/favicon.ico" />
+		<link rel="stylesheet"
+			href="#{request.contextPath}/layout2/style/common.css"
+			type="text/css" charset="utf-8" />
+		<link rel="stylesheet"
+			href="#{request.contextPath}/layout2/style/common/jqueryui/jquery-ui.css"
+			type="text/css" charset="utf-8" />
+		<link rel="stylesheet" 
+			href="#{request.contextPath}/script/jquery.twitter/jquery.twitter.css" 
+			type="text/css" media="all" />
+
+		<script type="text/javascript" src="#{request.contextPath}/script/jquery.twitter/jquery.twitter.js"></script>
+		<script type="text/javascript" src="#{request.contextPath}/script/jquery.pngFix.js" charset="utf-8"></script> 
+		<script type="text/javascript" src="#{request.contextPath}/script/jquery.parallax/jquery.parallax-0.2.01-pack.js" charset="utf-8"></script> 
+		<script type="text/javascript" src="#{request.contextPath}/script/main.js"></script>
+		
+		<f:loadBundle basename="MessageResources" var="msg" />
+
+		<title>#{msg.mainTitle}</title>
+
+		<script>
+
+			
+			jQuery(document).ready(function() {
+				jQuery("#myTweets").getTwitter({
+					userName: "ozkan_sari",
+					numTweets: 5,
+					loaderText: "Loading tweets...",
+					slideIn: true,
+					showHeading: true,
+					headingText: "Latest Tweets",
+					showProfileLink: true
+				});
+				applyParallaxEffect();
+			});
+		
+		</script>
+
+		<ui:insert name="head" />
+
+	</h:head>
+
+	<body style="width:100%" class="alpha20">
+
+		<div id="main" style="position:absolute;left:0;width:100%;height:200px;"> 
+			<div class="wrapper outer" style="height:200px;"> 
+				<div class="wrapper inner" style="height:200px;">
+					&nbsp;
+				</div><!-- /.wrapper inner --> 
+			</div><!-- /.wrapper outer --> 
+		</div><!-- /#main --> 
+		
+		<t:div style="width:1000px;margin-left:auto;margin-right:auto;">
+		
+			<t:div id="header">
+				<ul id="menu">
+					<li><a href="#{request.contextPath}/page/index.xhtml"><img src="#{request.contextPath}/layout2/style/en/images/link_home.gif" alt="#{msg['page.home']}"/></a></li>
+					<li><a href="#{request.contextPath}/page/aboutme.xhtml"><img src="#{request.contextPath}/layout2/style/en/images/link_aboutme.gif" alt="#{msg['page.aboutme']}" /></a></li>
+					<li><a href="#{request.contextPath}/page/resume.xhtml"><img src="#{request.contextPath}/layout2/style/en/images/link_resume.gif" alt="#{msg['page.resume']}" /></a></li>
+					<li><a href="#{request.contextPath}/page/hobbies.xhtml"><img src="#{request.contextPath}/layout2/style/en/images/link_hobbies.gif" alt="#{msg['page.hobbies']}" /></a></li>
+					<li><a href="#{request.contextPath}/page/portfolio.xhtml"><img src="#{request.contextPath}/layout2/style/en/images/link_portfolio.gif" alt="#{msg['page.portfolio']}" /></a></li>
+					<li><a href="#{request.contextPath}/page/photos.xhtml"><img src="#{request.contextPath}/layout2/style/en/images/link_photos.gif" alt="#{msg['page.photos']}" /></a></li>
+				</ul>
+			</t:div>
+			
+			<t:div id="content">
+				
+				<t:div id="posts">
+					<t:div styleClass="post">
+						<ui:insert name="body" />
+					</t:div>
+				</t:div>
+				
+				<t:div id="sidebar" >
+					<t:div id="search">
+						<a href="http://github.com/ozkansari" target="_blank" title="social coding"><img src="#{request.contextPath}/layout2/style/common/images/socialnw/git.png" alt="github"/></a>
+						<a href="http://www.linkedin.com/in/ozkansari" target="_blank" title="Linked In"><img src="#{request.contextPath}/layout2/style/common/images/socialnw/linkedin.png" alt="linkedin"/></a>
+						<a href="http://twitter.com/#!/ozkan_sari" target="_blank" title="Twitter"><img src="#{request.contextPath}/layout2/style/common/images/socialnw/twitter.png" alt="twitter"/></a>
+						<a href="http://friendfeed.com/ozkansari" target="_blank" title="friendfeed"><img src="#{request.contextPath}/layout2/style/common/images/socialnw/friendfeed.png" alt="friendfeed"/></a>
+						<a href="http://www.facebook.com/ozkansari" target="_blank" title="facebook"><img src="#{request.contextPath}/layout2/style/common/images/socialnw/facebook.png" alt="facebook"/></a>
+						<a href="http://www.formspring.me/ozkansari" target="_blank" title="Formspring Me: Ask me if you can"><img src="#{request.contextPath}/layout2/style/common/images/socialnw/formspring.png" alt="youtube"/></a>
+						<a href="http://picasaweb.google.com/ozkansari" target="_blank" title="Picasa Photo Album"><img src="#{request.contextPath}/layout2/style/common/images/socialnw/picasa.png" alt="picasa"/></a>
+						<a href="http://social.wakoopa.com/ozkansari" target="_blank" title="Wakoopa"><img src="#{request.contextPath}/layout2/style/common/images/socialnw/wakoopa.png" alt="wakoopa"/></a>
+						<!-- <a href="http://http://ozkansari.spaces.live.com/" title="Msn Space" target="_blank"><img src="#{request.contextPath}/layout2/style/common/images/socialnw/msn.png" alt="msn"/></a>  -->
+						<a href="http://www.youtube.com/ozkansari" target="_blank" title="Youtube"><img src="#{request.contextPath}/layout2/style/common/images/socialnw/youtube.png" alt="youtube"/></a>
+					</t:div>
+					<t:div id="myProfile" styleClass="twitted">
+						<h2>My Profile</h2>
+						<h:panelGrid columns="2" styleClass="profileTable">
+							<h:graphicImage value="layout2/style/common/images/me/ozkansari.jpg" styleClass="profileImage"/>
+							<h:panelGrid columns="1" style="vertical-align:top;">
+								<h:outputText value="Ozkan SARI" />
+								<h:outputText value="1983" />
+								<h:outputText value="Istanbul" />
+							</h:panelGrid>
+						</h:panelGrid>
+					</t:div>
+					<t:div id="myTweets" styleClass="twitted">
+		
+					</t:div>
+				</t:div>
+			</t:div>
+			
+			<t:div id="footer">
+				<p>Copyright &copy;. All rights reserved. Design by <a
+					href="http://www.bestfreetemplates.info" target="_blank"
+					title="Best Free Templates">BFT</a> || 20h</p>
+			</t:div>
+		
+		</t:div>
+		
+		<h:form>
+			<p:stack icon="layout2/style/common/images/stack/stack.png" id="paper_stack">
+				<c:forEach items="#{myColumnistHome.newspaperEnumList}" var="paper" varStatus="i">
+					<p:menuitem value="#{paper.name}" icon="#{paper.stackLogo}" action="#{myColumnistHome.selectNewspaper}" update="selectPaperForm" oncomplete="tabs.select(0);">
+						<f:param value="#{paper.identifier}" name="paper" />
+					</p:menuitem>
+				</c:forEach>
+			</p:stack>
+		</h:form>
+	</body>
+	</html>
+
+</f:view>

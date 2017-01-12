@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="ISO-8859-9"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:t="http://myfaces.apache.org/tomahawk" contentType="text/html"
+	charset="UTF-8">
+
+	<html>
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		
+		<link rel="shortcut icon" href="#{request.contextPath}/favicon.ico" />
+		<link rel="stylesheet"
+			href="#{request.contextPath}/layout2/style/common.css"
+			type="text/css" charset="utf-8" />
+		<link rel="stylesheet"
+			href="#{request.contextPath}/layout2/style/common/jqueryui/jquery-ui.css"
+			type="text/css" charset="utf-8" />
+		<link rel="stylesheet" 
+			href="#{request.contextPath}/script/jquery.twitter/jquery.twitter.css" 
+			type="text/css" media="all" />
+
+		<script type="text/javascript" src="#{request.contextPath}/script/jquery.twitter/jquery.twitter.js"></script>
+		<script type="text/javascript" src="#{request.contextPath}/script/jquery.pngFix.js" charset="utf-8"></script> 
+		<script type="text/javascript" src="#{request.contextPath}/script/jquery.parallax/jquery.parallax-0.2.01-pack.js" charset="utf-8"></script> 
+		<script type="text/javascript" src="#{request.contextPath}/script/main.js"></script>
+		
+		<f:loadBundle basename="MessageResources" var="msg" />
+
+		<title>#{msg.mainTitle}</title>
+
+		<script>
+
+			
+			jQuery(document).ready(function() {
+				jQuery("#myTweets").getTwitter({
+					userName: "ozkan_sari",
+					numTweets: 5,
+					loaderText: "Loading tweets...",
+					slideIn: true,
+					showHeading: true,
+					headingText: "Latest Tweets",
+					showProfileLink: true
+				});
+				applyParallaxEffect();
+			});
+		
+		</script>
+
+		<ui:insert name="head" />
+
+	</h:head>
+
+	<body style="width:100%" class="alpha20">
+
+		<div id="main" style="position:absolute;left:0;width:100%;height:200px;"> 
+			<div class="wrapper outer" style="height:200px;"> 
+				<div class="wrapper inner" style="height:200px;">
+					&nbsp;
+				</div><!-- /.wrapper inner --> 
+			</div><!-- /.wrapper outer --> 
+		</div><!-- /#main --> 
+		
+		<t:div style="width:1000px;margin-left:auto;margin-right:auto;">
+		
+			<t:div id="header">
+				<ul id="menu">
+					<li><a href="#{request.contextPath}/page/index.xhtml"><img src="#{request.contextPath}/layout2/style/en/images/link_home.gif" alt="#{msg['page.home']}"/></a></li>
+					<li><a href="#{request.contextPath}/page/aboutme.xhtml"><img src="#{request.contextPath}/layout2/style/en/images/link_aboutme.gif" alt="#{msg['page.aboutme']}" /></a></li>
+					<li><a href="#{request.contextPath}/page/resume.xhtml"><img src="#{request.contextPath}/layout2/style/en/images/link_resume.gif" alt="#{msg['page.resume']}" /></a></li>
+					<li><a href="#{request.contextPath}/page/hobbies.xhtml"><img src="#{request.contextPath}/layout2/style/en/images/link_hobbies.gif" alt="#{msg['page.hobbies']}" /></a></li>
+					<li><a href="#{request.contextPath}/page/portfolio.xhtml"><img src="#{request.contextPath}/layout2/style/en/images/link_portfolio.gif" alt="#{msg['page.portfolio']}" /></a></li>
+					<li><a href="#{request.contextPath}/page/photos.xhtml"><img src="#{request.contextPath}/layout2/style/en/images/link_photos.gif" alt="#{msg['page.photos']}" /></a></li>
+				</ul>
+			</t:div>
+			
+			<t:div id="content">
+				<t:div id="widePosts">
+					<ui:insert name="body" />
+				</t:div>
+				<t:div id="sidebar_inner" >
+					<t:div id="search_inner"></t:div>
+				</t:div>
+			</t:div>
+
+			<t:div id="footer">
+				<p>Copyright &copy;. All rights reserved. Design by <a
+					href="http://www.bestfreetemplates.info" target="_blank"
+					title="Best Free Templates">BFT</a> || 20h</p>
+			</t:div>
+		
+		</t:div>
+		
+		<h:form>
+			<p:stack icon="#{request.contextPath}layout2/style/common/images/stack/stack.png" id="paper_stack">
+				<c:forEach items="#{myColumnistHome.newspaperEnumList}" var="paper" varStatus="i">
+					<p:menuitem value="#{paper.name}" icon="#{paper.stackLogo}" action="#{myColumnistHome.selectNewspaper}" update="selectPaperForm" oncomplete="tabs.select(0);">
+						<f:param value="#{paper.identifier}" name="paper" />
+					</p:menuitem>
+				</c:forEach>
+			</p:stack>
+		</h:form>
+	</body>
+	</html>
+
+</f:view>
